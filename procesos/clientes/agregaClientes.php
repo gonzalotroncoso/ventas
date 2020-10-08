@@ -1,0 +1,24 @@
+<?php 
+session_start();
+
+require_once"../../clases/Conexion.php";
+require_once "../../clases/Clientes.php";
+
+$obj= new clientes();
+
+$id = $_SESSION['iduser'];
+
+$datos = array(
+			$id,
+			$_POST['nombre'],
+			$_POST['apellido'],
+			$_POST['direccion'],	
+			$_POST['email'],	
+			$_POST['telefono'],						
+			$_POST['rfc']	
+			);
+
+echo $obj->registroClientes($datos);
+
+
+ ?>
